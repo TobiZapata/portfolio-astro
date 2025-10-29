@@ -1,0 +1,53 @@
+---
+const {
+  image,
+  title,
+  description,
+  technologies,
+  link,
+} = Astro.props;
+---
+
+<div
+  class="relative group overflow-hidden rounded-xl transition-all duration-300 ease-out
+  hover:scale-[1.05] hover:z-20 hover:shadow-[0_0_25px_rgba(0,0,0,0.6)]"
+>
+  <img
+    src={image}
+    alt={title + " proyecto screenshot"}
+    class="rounded-xl shadow-[0_0_20px_rgba(0,0,0,0.2)] w-full h-full object-cover"
+  />
+
+  <a
+    href={link}
+    target="_blank"
+    class="absolute inset-0 flex flex-col p-4 bg-black/90 text-white rounded-xl
+    opacity-0 group-hover:opacity-100 overflow-y-auto"
+  >
+    <h1
+      class="text-2xl font-bold mb-3 text-center"
+    >
+      Proyecto {title}
+    </h1>
+
+    <p class="mb-2 text-pretty">
+      <strong class="text-xl"
+        >Descripción:</strong
+      >
+      {description}
+    </p>
+
+    <p class="mb-2 text-pretty">
+      <strong class="text-xl"
+        >Tecnologías:</strong
+      >
+      {technologies}
+    </p>
+
+    <p
+      class="mt-auto text-center text-sm opacity-80"
+    >
+      Clic para ir a la página.
+    </p>
+  </a>
+</div>

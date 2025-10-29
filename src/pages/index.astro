@@ -6,12 +6,14 @@ import LinkedInIcon from "../icons/LinkedInIcon.astro";
 import Github from "../icons/Github.astro";
 import Mail from "../icons/Mail.astro";
 import CV from "../icons/CV.astro";
+import Container from "../components/Container.astro";
+import Code from "../icons/Code.astro";
 ---
 
 <Layout>
   <main>
     <section
-      class="w-full lg:w-[760px] mx-auto py-44"
+      class="w-full lg:w-[760px] mx-auto pt-44"
     >
       <img
         src="tobicara2.png"
@@ -34,7 +36,7 @@ import CV from "../icons/CV.astro";
       <h2 class="text-2xl opacity-80">
         Desarrollador web fullstack.
         Estudiante de programación en
-        UTN. +4 años de experiencia
+        UTN. +3 años de experiencia
         programando. De Buenos Aires,
         Argentina.
       </h2>
@@ -55,11 +57,23 @@ import CV from "../icons/CV.astro";
           <Mail /> tobiaszapata99@gmail.com
         </SocialsPill>
         <SocialsPill
-          href="/Tobias_Zapata_CV.pdf"
+          href="CV-FacundoZapata.pdf"
         >
-          <CV /> Descargar CV
+          <CV /> Mirar CV
         </SocialsPill>
       </nav>
+    </section>
+
+    <section
+      class="w-full lg:w-[760px] mx-auto pt-60"
+    >
+      <h1
+        id="projects"
+        class="text-white text-5xl font-bold flex flex-row mb-6"
+      >
+        <Code />Proyectos
+      </h1>
+      <Container />
     </section>
   </main>
 </Layout>
