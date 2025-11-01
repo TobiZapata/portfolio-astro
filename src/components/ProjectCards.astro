@@ -1,0 +1,68 @@
+---
+const {
+  image,
+  title,
+  description,
+  technologies = [],
+  link,
+} = Astro.props;
+
+import Next from "../icons/Next.astro";
+import Vercel from "../icons/Vercel.astro";
+import Tailwind from "../icons/Tailwind.astro";
+import Firebase from "../icons/Firebase.astro";
+
+const icons = {
+  Next,
+  Vercel,
+  Tailwind,
+  Firebase,
+};
+---
+
+<a
+  href={link}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="flex flex-col md:flex-row md:max-w-[760px] bg-transparent rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 h-full"
+>
+  <!-- Imagen -->
+  <img
+    class="w-full md:w-[300px] object-cover rounded-t-lg md:rounded-l-lg md:rounded-t-none"
+    src={image}
+    alt={`${title} proyecto screenshot`}
+  />
+
+  <!-- Contenido -->
+  <div class="flex flex-col flex-1 p-4">
+    <h5
+      class="mb-4 text-center text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+    >
+      {title}
+    </h5>
+
+    <p
+      class="mb-3 font-normal text-gray-700 dark:text-gray-400"
+    >
+      {description}
+    </p>
+
+    <!-- Íconos -->
+    <div
+      class="flex flex-row justify-center gap-x-4 mt-auto"
+    >
+      {
+        technologies.map(
+          (
+            tech: keyof typeof icons
+          ) => {
+            const Icon = icons[tech];
+            return Icon ?
+                <Icon />
+              : null;
+          }
+        )
+      }
+    </div>
+  </div>
+</a>

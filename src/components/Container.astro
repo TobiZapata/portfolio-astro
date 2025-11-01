@@ -1,36 +1,31 @@
 ---
-import ProjectCard from "./ProjectCard.astro";
+import ProjectCards from "./ProjectCards.astro";
 ---
 
 <section
-  class="grid grid-cols-2 gap-2 max-w-[760px] mx-auto grid-flow-row-dense"
+  class="flex flex-col max-w-[760px] mx-auto gap-y-10"
 >
-  <ProjectCard
+  <ProjectCards
     image="image.webp"
     title="VocesQueViajan"
     description="Proyecto para un programa de radio real, el cliente puede subir, borrar o modificar los videos, títulos y descripciones habiéndose registrado con su mail de administrador."
-    technologies="Node.js, Next.js, Firebase, FirebaseAuth, Vercel, Tailwind."
+    technologies={[
+      "Next",
+      "Tailwind",
+      "Firebase",
+      "Vercel",
+    ]}
     link="https://voces-que-viajan-1.vercel.app/"
   />
-  <ProjectCard
+  <ProjectCards
     image="image2.webp"
     title="Henry's Gym"
-    description="Proyecto final de un bootcamp de programación, hecho en conjunto con otros 5 programadores. El cliente puede comprar membresias, reservar clases y armar sus propias rutinas de ejercicios."
-    technologies="React, Express, PostgreSQL."
+    description="Proyecto final del bootcamp de Full Stack Web Development de Henry"
+    technologies={[
+      "Next",
+      "Tailwind",
+      "Vercel",
+    ]}
     link="https://henrygym.onrender.com/"
-  />
-  <ProjectCard
-    image="image.webp"
-    title="VocesQueViajan"
-    description="Proyecto para un programa de radio real, el cliente puede subir, borrar o modificar los videos, títulos y descripciones habiéndose registrado con su mail de administrador."
-    technologies="Node.js, Next.js, Firebase, FirebaseAuth, Vercel, Tailwind."
-    link="https://voces-que-viajan-1.vercel.app/"
-  />
-  <ProjectCard
-    image="image.webp"
-    title="VocesQueViajan"
-    description="Proyecto para un programa de radio real, el cliente puede subir, borrar o modificar los videos, títulos y descripciones habiéndose registrado con su mail de administrador."
-    technologies="Node.js, Next.js, Firebase, FirebaseAuth, Vercel, Tailwind."
-    link="https://voces-que-viajan-1.vercel.app/"
   />
 </section>
