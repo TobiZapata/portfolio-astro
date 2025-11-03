@@ -11,6 +11,7 @@ import Next from "../icons/Next.astro";
 import Vercel from "../icons/Vercel.astro";
 import Tailwind from "../icons/Tailwind.astro";
 import Firebase from "../icons/Firebase.astro";
+import External from "../icons/External.astro";
 
 const icons = {
   Next,
@@ -24,16 +25,26 @@ const icons = {
   href={link}
   target="_blank"
   rel="noopener noreferrer"
-  class="flex flex-col md:flex-row md:max-w-[760px] bg-transparent rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 h-full"
+  class="group relative flex flex-col md:flex-row md:max-w-[760px] bg-black/20 hover:bg-black/40 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 h-full"
 >
-  <!-- Imagen -->
-  <img
-    class="w-full md:w-[300px] object-cover rounded-t-lg md:rounded-l-lg md:rounded-t-none"
-    src={image}
-    alt={`${title} proyecto screenshot`}
-  />
+  <div
+    class="relative w-full md:w-[300px]"
+  >
+    <img
+      class="w-full object-cover rounded-t-lg md:rounded-l-lg md:rounded-t-none"
+      src={image}
+      alt={`${title} proyecto screenshot`}
+    />
 
-  <!-- Contenido -->
+    <div
+      class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+    >
+      <External
+        class="w-6 h-6 text-white drop-shadow-md"
+      />
+    </div>
+  </div>
+
   <div class="flex flex-col flex-1 p-4">
     <h5
       class="mb-4 text-center text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
@@ -47,7 +58,6 @@ const icons = {
       {description}
     </p>
 
-    <!-- Íconos -->
     <div
       class="flex flex-row justify-center gap-x-4 mt-auto"
     >
